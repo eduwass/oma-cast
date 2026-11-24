@@ -888,7 +888,8 @@ PanelWindow {
     height: window.compact ? window.headerHeight + card.borderTop + card.borderBottom : window.fullHeight
     radius: Style.cornerRadius
     anchors.horizontalCenter: parent.horizontalCenter
-    y: Math.max(Style.gapsOut, Math.min(Math.round(window.height / 4), window.height - window.fullHeight - Style.gapsOut))
+    // Centred on the screen at its full height (it grows downward from there as results come in).
+    y: Math.max(Style.gapsOut, Math.round((window.height - window.fullHeight) / 2))
     color: window.cardBackground
     borderSpec: window.borderSpec
     clip: true
