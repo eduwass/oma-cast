@@ -923,17 +923,12 @@ PanelWindow {
 
       Item {
         id: lead
-        width: window.px(28)
+        // No logo at the root: the search text starts at the edge; the slot is only the back arrow's.
+        width: window.atRoot ? -window.px(12) : window.px(28)
         height: window.px(28)
         anchors.left: parent.left
         anchors.leftMargin: window.px(18)
         anchors.verticalCenter: parent.verticalCenter
-
-        Logo {
-          anchors.centerIn: parent
-          visible: window.atRoot
-          size: window.crispLogoSize(window.px(22))
-        }
 
         Text {
           anchors.centerIn: parent
